@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "npm --prefix my-project run dev",
+    "build": "npm --prefix my-project run build",
+    "start": "npm --prefix my-project run dev"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  }
+}
