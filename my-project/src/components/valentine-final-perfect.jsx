@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 const ValentineEnvelope = () => {
   const [envelopeOpen, setEnvelopeOpen] = useState(false);
@@ -106,7 +106,8 @@ const ValentineEnvelope = () => {
     return points;
   };
 
-  const heartPoints = generateHeartPoints(80);
+  // memoize heart points so they don't regenerate every render
+  const heartPoints = useMemo(() => generateHeartPoints(80), []);
 
   // Writing animation: reveal characters one by one, then loop after a pause
   useEffect(() => {
@@ -149,7 +150,7 @@ const ValentineEnvelope = () => {
     startWriting();
 
     return () => clearTimers();
-  }, [showHeart, heartPoints.length, isMobile]);
+  }, [showHeart, isMobile]);
 
   return (
     <div style={styles.container}>

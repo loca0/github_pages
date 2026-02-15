@@ -2,12 +2,15 @@
   "name": "my-project",
   "private": true,
   "version": "0.0.0",
+  "homepage": "http://loca0.github.io/github_pages",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^12.34.0",

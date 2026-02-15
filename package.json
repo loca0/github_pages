@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d my-project/dist",
     "dev": "npm --prefix my-project run dev",
     "build": "npm --prefix my-project run build",
     "start": "npm --prefix my-project run dev"
@@ -7,5 +9,8 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
